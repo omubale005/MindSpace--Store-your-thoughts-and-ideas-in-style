@@ -14,23 +14,26 @@
   <body>
     <div class="container">
       <header class="header">
-        <div class="header-top">
-          <h1>MindSpace</h1>
-          <div class="header-actions">
-            <button id="darkModeToggle" class="icon-btn" title="Toggle dark mode">
-              <i class="fas fa-moon"></i>
-            </button>
-            <button id="exportBtn" class="icon-btn" title="Export notes">
-              <i class="fas fa-file-export"></i>
-            </button>
-            <label class="icon-btn upload-label" title="Import notes">
-              <input id="importInput" type="file" accept="application/json" hidden />
-              <i class="fas fa-file-import"></i>
-            </label>
-          </div>
-        </div>
-        <p>Store your thoughts and ideas in style</p>
-      </header>
+  <div class="header-top">
+    <h1>MindSpace</h1>
+  </div>
+  <p>Store your thoughts and ideas in style</p>
+
+  <!-- Moved here for better flow -->
+  <div class="header-actions">
+    <button id="darkModeToggle" class="icon-btn" title="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+    </button>
+    <button id="exportBtn" class="icon-btn" title="Export notes">
+      <i class="fas fa-file-export"></i>
+    </button>
+    <label class="icon-btn upload-label" title="Import notes">
+      <input id="importInput" type="file" accept="application/json" hidden />
+      <i class="fas fa-file-import"></i>
+    </label>
+  </div>
+</header>
+
 
       <div class="controls">
         <div class="controls-container">
