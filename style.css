@@ -562,4 +562,30 @@ body.dark select option {
   }
 }
 
+@media (max-width: 480px) {
+  /* Stack title, tagline, and buttons */
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Ensure tagline spacing looks nice */
+  .header p {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  /* Move buttons below tagline & center them */
+  .header-actions {
+    position: static;  /* remove absolute only in mobile */
+    transform: none;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+}
+
 
