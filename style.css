@@ -415,11 +415,35 @@ body.dark select option {
     color: var(--text);
 }
 
+/* Responsive note-card height */
 .note-card {
-    height: 220px; /* fixed card height */
     display: flex;
     flex-direction: column;
+    height: auto; /* let height adapt to content */
+    min-height: 180px; /* ensure short notes still look balanced */
 }
+
+/* Adjust content truncation dynamically */
+.note-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Show fewer lines on small screens */
+@media (max-width: 480px) {
+  .note-text {
+    --webkit-line-clamp: 2;
+  }
+}
+
+/* Show more lines on tablets and up */
+@media (min-width: 768px) {
+  .note-text {
+    --webkit-line-clamp: 4;
+  }
+}
+
 
 .note-content {
     flex: 1;
@@ -457,6 +481,85 @@ body.dark select option {
 #viewNoteModal .modal-body {
     max-height: 70vh; /* limit to 70% of screen height */
     overflow-y: auto; /* add vertical scroll */
+}
+
+/* Ultra-small screens fix (<360px) */
+@media (max-width: 360px) {
+  body {
+    padding: 10px;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  .header p {
+    font-size: 0.85rem;
+  }
+  .icon-btn {
+    padding: 6px;
+  }
+  .controls {
+    padding: 10px;
+  }
+  .add-btn {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+  .note-card {
+    height: auto;
+    min-height: 180px;
+  }
+}
+
+/* Better header wrap on mobile */
+@media (max-width: 480px) {
+  .header-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .header-actions {
+    position: static;
+    transform: none;
+    display: flex;
+    gap: 6px;
+  }
+}
+
+/* Controls section improvement */
+@media (max-width: 767px) {
+  .filter-group {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .search-input {
+    width: 100%;
+  }
+}
+
+/* Notes grid flexibility */
+@media (max-width: 320px) {
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .note-title {
+    font-size: 0.95rem;
+  }
+}
+
+/* Modal improvements for small devices */
+@media (max-width: 400px) {
+  .modal {
+    margin: 10px;
+    padding: 10px;
+  }
+  .modal-body {
+    padding: 12px;
+  }
+  .form-label {
+    font-size: 0.85rem;
+  }
 }
 
 
